@@ -1,0 +1,30 @@
+/* controller/myInfo/myInfo.wxss */
+.header{
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.userPic{
+    position: relative;
+    right: 70rpx;
+}
+
+.userPic image{
+    width: 200rpx;
+    height: 200rpx;
+   border-radius: 50%;
+}
+
+.myInfoList button{
+    font-family:cursive;
+    text-align: left;
+    background-color: white;
+}
+
+.icon-right {
+    display: flex;
+    align-items:flex-end;
+    font-size: 40rpx;
+    color:#333;
+  }

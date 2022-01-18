@@ -1,0 +1,11 @@
+<!--controller/qa/qa.wxml-->  
+<view class="box">
+    <view>1</view>
+    <view>1</view>
+    <view>1</view>
+    <view>1</view>
+    <view>1</view>
+    <view>1</view>
+    
+</view>
+<button class="contact" open-type='contact' ><p>联系客服</p></button>

@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<swiper class="cover_swiper" indicator-dots='true' display-multiple-items='1' current='{{ centerItem }}' bindchange='handleSwiperChange'  previous-margin='0' next-margin='0' autoplay='true' circular='true' interval='5000'>
+  <block wx:for="{{coverList}}" wx:key="id">
+    <swiper-item>
+      <view class='imageBox' style='text-align:center'>
+      <view class='mask' wx:if='{{ index != centerItem }}'></view>
+      <image src="{{item.url}}" mode="aspectFill" style="height: 100px;" /></view>
+    </swiper-item>
+  </block>
+</swiper>
+<view style="display: flex;background-color:blanchedalmond;">
+  <button class="index_button"  bindtap="go2able">可做项目</button>
+  <button class="index_button"  bindtap="go2CoUpload">核酸上传</button>
+  <button class="index_button"  bindtap="go2healthCheck">体检预约</button>
+  <button class="index_button"  bindtap="go2cooperation">商业接洽</button>
+</view>
+<view class="scroll-view-blackboard">
+<view class="blackboard">
+<button class="blackboard_btn" bindtap="go2blackboard">公告栏</button>
+</view>
+</view>

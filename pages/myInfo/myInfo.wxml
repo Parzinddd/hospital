@@ -1,0 +1,21 @@
+<!--controller/myInfo/myInfo.wxml-->
+<view class="header" style="background-color: blanchedalmond;display: flex;" d>
+    <view class="userPic"><image src="../../resource/img/4.png" mode="widthFix"></image></view>
+    <view class="userID">
+    <view>刘亘恺</view>
+    <view>ID:19302010086</view>
+    </view>
+</view>
+
+<view class="myInfoList">
+    <button>
+    <view><text>基本信息</text></view>
+    </button>
+    <button><view><text>历史核酸报告</text></view></button>
+    <button><view><text>历史抽血报告</text></view></button>
+    <button><view><text>已参加项目</text></view></button>
+    <button><view><text>可参加项目</text></view></button>
+
+</view>
+
+
