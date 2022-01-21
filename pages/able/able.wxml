@@ -1,2 +1,0 @@
-<!--pages/able/able.wxml-->
-<button class="btn" bindtap="go2whiteBlood">白细胞采集</button>

@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e hospital-2ghumiuca447b728 --n quickstartFunctions --r --project "/Users/liuxuankai/WeChatProjects/hospital" --report_first --report
