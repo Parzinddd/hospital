@@ -9,7 +9,7 @@
   </block>
 </swiper>
 <view style="display: flex;background-color:blanchedalmond;">
-  <button class="index_button"  bindtap="go2able">可做项目</button>
+  <button class="index_button"  bindtap="go2able">可做项1目</button>
   <button class="index_button"  bindtap="go2CoUpload">核酸上传</button>
   <button class="index_button"  bindtap="go2healthCheck">体检预约</button>
   <button class="index_button"  bindtap="go2cooperation">商业接洽</button>
