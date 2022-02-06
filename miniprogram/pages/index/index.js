@@ -1,7 +1,7 @@
 // index.js
 // const app = getApp()
 const { envList } = require('../../envList.js');
-
+const db  = wx.cloud.database()
 Page({
   data: {
 centerItem: 0,  
@@ -58,7 +58,23 @@ coverList:[
     wx.navigateTo({
       url:'/pages/blackboard/blackboard',
     })
+  },
+  
+  onLoad() {
+    this.init()
+  },
+   
+  init(){
+      db.collection('sales')
+      .get()
+      .then(res=>{
+        console.log('success', res);
+      }).catch(err=>{
+        console.log('fail', err);
+      })
   }
+
+
 })
 
 

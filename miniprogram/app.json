@@ -13,34 +13,34 @@
     "pages/whiteBlood/whiteBlood"
   ],
   "tabBar": {
-    "color": "#000",
-    "selectedColor": "#89bdf7",
-    "backgroundColor": "#fff",
+    "color": "",
+    "selectedColor": "#808080",
+    "backgroundColor": "#ffff",
     "borderStyle": "black",
     "list": [
     {
     "pagePath": "pages/index/index",
     "text": "首页",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/home.png",
+    "selectedIconPath": "resource/img/home1.png"
     },
     {
     "pagePath": "pages/qa/qa",
     "text": "Q&A",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/QA.png",
+    "selectedIconPath": "resource/img/QA1.png"
     },
     {
     "pagePath": "pages/news/news",
     "text": "通知",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/message.png",
+    "selectedIconPath": "resource/img/message1.png"
     },
     {
     "pagePath": "pages/myInfo/myInfo",
     "text": "我的",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/person.png",
+    "selectedIconPath": "resource/img/person1.png"
     }
 ]
 },
