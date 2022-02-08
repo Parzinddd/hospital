@@ -21,26 +21,26 @@
     {
     "pagePath": "pages/index/index",
     "text": "首页",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/home.jpg",
+    "selectedIconPath": "resource/img/homeS.jpg"
     },
     {
     "pagePath": "pages/qa/qa",
     "text": "Q&A",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/qa.jpg",
+    "selectedIconPath": "resource/img/qa.jpg"
     },
     {
     "pagePath": "pages/news/news",
     "text": "通知",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/notice.jpg",
+    "selectedIconPath": "resource/img/noticeS.jpg"
     },
     {
     "pagePath": "pages/myInfo/myInfo",
     "text": "我的",
-    "iconPath": "",
-    "selectedIconPath": ""
+    "iconPath": "resource/img/my.jpg",
+    "selectedIconPath": "resource/img/myS.jpg"
     }
 ]
 },

@@ -1,2 +1,30 @@
-<!--pages/healthCheck/healthCheck.wxml-->
-<text>pages/healthCheck/healthCheck.wxml</text>
+<view class="title">体检预约</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="reserveSection">
+  <view class="section_title">选择预约日期</view>
+  <picker name="reserveTime" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+</view>
+
+<view class="space"></view>
+  <view class="section">
+    <view class="section_title">预计出发时间</view>
+    <input name="departTimeInput" placeholder="请输入4位数字" value="{{departTimeInput}}"/>
+  </view>
+  <view class="line"></view>
+  <view class="section">
+    <view class="section_title">预计抵达时间</view>
+    <input name="arrivalTimeInput" placeholder="请输入4位数字" value="{{arrivalTimeInput}}"/>
+  </view>
+  <view class="reminderSection">
+    <view class="reminder">贴心备注:</view>
+    <view class="reminder">请用24小时制并输入四位数字</view>
+    <view class="reminder">例如:0800（早上八点）、1530（下午三点三十分）</view>
+  </view>
+  <view class="space"></view>
+  <button style="width:50%;" formType="submit" >提交</button>
+</form>
