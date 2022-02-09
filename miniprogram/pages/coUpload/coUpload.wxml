@@ -1,2 +1,4 @@
 <!--pages/coUpload/coUpload.wxml-->
-<text>pages/coUpload/coUpload.wxml</text>
+<text class="title" >核酸检测报告上传</text>
+<button class = "up" bindtap="UploadImage" >点击上传</button>
+<image class = "img"  mode="scaleToFill" src="{{url}}" ></image>

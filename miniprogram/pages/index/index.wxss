@@ -10,7 +10,7 @@
 }
 
 .index_button{
-  background-color: blanchedalmond;
+  background-color: #F1FAFA;
   width: 25%;
   height: 100px;
   line-height: 100px;
@@ -27,12 +27,12 @@
   margin-right: auto;
   width: 300px;
   height:250px;
-  background-color: white;
+  background-color:  #FBFBEA;
   animation:myfirst 8s linear infinite;
 }
 
 
 page{
-  background-color: blanchedalmond;
+  background-color:#F1FAFA;
 }
 

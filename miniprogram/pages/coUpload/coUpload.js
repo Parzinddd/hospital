@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        url: '../../resource/img/1.png',
+        path:"",
     },
 
     /**
@@ -62,5 +63,20 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    UploadImage(){
+        wx,wx.chooseImage({
+          success: (result) => {
+              wx.cloud.uploadFile({
+                  cloudPath:"686f-hospital-2ghumiuca447b728-1309306443/hsImg/"+result.tempFilePaths[0],
+                  filePath:result.tempFilePaths[0],
+                  success: res=>{
+                      console.log('上传成功',res)
+                  }
+              })
+          }
+        })
     }
 })
+

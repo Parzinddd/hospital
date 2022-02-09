@@ -1,1 +1,30 @@
 /* pages/coUpload/coUpload.wxss */
+page{
+  background-color: #F1FAFA;
+}
+
+.up{
+  position: relative;
+  left: 0rpx; 
+  top: 924rpx;
+  background-color: #FBFBEA;
+  border-color: black;
+  border-style: solid
+}
+
+.title{
+  font-size: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+}
+
+.img{
+  margin-left: auto; 
+  margin-right: auto; 
+  border-style: solid; 
+  width: 685rpx; 
+  height: 749rpx; 
+  display: block; 
+  box-sizing: border-box
+}
