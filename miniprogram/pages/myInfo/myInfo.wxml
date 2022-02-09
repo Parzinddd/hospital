@@ -1,2 +1,4 @@
-<!--pages/myInfo/myInfo.wxml-->
-<text>pages/myInfo/myInfo.wxml</text>
+<view class="user_header"></view>
+<view class="section"></view>
+<view class="section"></view>
+<view class="sectio"></view>

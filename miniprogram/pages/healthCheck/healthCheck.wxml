@@ -13,12 +13,12 @@
 <view class="space"></view>
   <view class="section">
     <view class="section_title">预计出发时间</view>
-    <input name="departTimeInput" placeholder="请输入4位数字" value="{{departTimeInput}}"/>
+    <input name="departure_time" placeholder="请输入4位数字" value="{{departure_time}}"/>
   </view>
   <view class="line"></view>
   <view class="section">
     <view class="section_title">预计抵达时间</view>
-    <input name="arrivalTimeInput" placeholder="请输入4位数字" value="{{arrivalTimeInput}}"/>
+    <input name="arrival_time" placeholder="请输入4位数字" value="{{arrival_time}}"/>
   </view>
   <view class="reminderSection">
     <view class="reminder">贴心备注:</view>

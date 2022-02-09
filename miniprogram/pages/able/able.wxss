@@ -3,9 +3,8 @@ page{
 }
 
 button{
-  font-weight: lighter;
   margin-top: 5vw;
   color: white;
-  background-color: #00a6d8;
+  background-color: #00CC00;
 }
   

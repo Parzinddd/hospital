@@ -31,8 +31,8 @@ Page({
       ]
     ],
     multiIndex: [0, 0, 0],
-    departTimeInput: '',
-    arrivalTimeInput: ''
+    departure_time: '',
+    arrival_time: ''
   },
 
   bindDatePickerChange: function (e) {

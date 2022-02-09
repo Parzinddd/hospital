@@ -23,14 +23,32 @@
 }
 
 .blackboard{
+  margin-top: 5vw;
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
-  height:250px;
+  width: 90vw;
+  height:91vw;
   background-color: white;
   animation:myfirst 8s linear infinite;
 }
 
+.line{
+  margin: auto;
+  width: 80vw;
+  height: 1rpx;
+  background-color: #cfcece;
+}
+
+.news_section{
+  font-size: 12pt;
+  height: 10vw;
+}
+
+.news_section text{
+  margin-left:2vw ;
+  position: relative;
+  top: 2vw;
+}
 
 page{
   background-color: blanchedalmond;

@@ -10,7 +10,8 @@
     "pages/cooperation/cooperation",
     "pages/able/able",
     "pages/blackboard/blackboard",
-    "pages/whiteBlood/whiteBlood"
+    "pages/whiteBlood/whiteBlood",
+    "pages/getOpenId/getOpenId"
   ],
   "tabBar": {
     "color": "#000",
@@ -31,7 +32,7 @@
     "selectedIconPath": "resource/img/qa.jpg"
     },
     {
-    "pagePath": "pages/news/news",
+    "pagePath": "pages/getOpenId/getOpenId",
     "text": "通知",
     "iconPath": "resource/img/notice.jpg",
     "selectedIconPath": "resource/img/noticeS.jpg"
