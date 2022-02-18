@@ -1,1 +1,51 @@
-/* pages/cooperation/cooperation.wxss */
+.space{
+    height: 2vw;
+}
+
+.background image{
+    width: 100vw;
+    height: 230vw;
+}
+
+.engBackground image{
+    width: 100vw;
+    height: 340vw;
+}
+
+.logo{
+    position:absolute;
+    top: 13vw;
+    left: 13vw;
+    height: 25vw;
+    width: 25vw;
+}
+
+.button_area{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(197, 195, 195);
+    z-index: 1;
+}
+
+
+
+
+.intro{
+    position:absolute;
+    top: 45vw;
+    left: 13vw;
+    margin-right: 13vw;
+}
+
+.title{
+    font-size: 11pt;
+    font-weight: 700;
+}
+
+.content{
+    font-size: 7pt;
+}

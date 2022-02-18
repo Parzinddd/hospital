@@ -1,4 +1,10 @@
 page{
     background-color: blanchedalmond;
-  }
+}
+
+button{
+  margin-top: 5vw;
+  color: white;
+  background-color: #00CC00;
+}
   

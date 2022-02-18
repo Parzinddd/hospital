@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/baseInfo/baseInfo",
+    "pages/hsHistory/hsHistory",
+    "pages/joinHistory/joinHistory",
     "pages/login/login",
     "pages/news/news",
     "pages/qa/qa",
@@ -10,12 +13,13 @@
     "pages/cooperation/cooperation",
     "pages/able/able",
     "pages/blackboard/blackboard",
-    "pages/whiteBlood/whiteBlood"
+    "pages/whiteBlood/whiteBlood",
+    "pages/getOpenId/getOpenId"
   ],
   "tabBar": {
-    "color": "",
+    "color": "#000000",
     "selectedColor": "#808080",
-    "backgroundColor": "#ffff",
+    "backgroundColor": "#FAFAFA",
     "borderStyle": "black",
     "list": [
     {

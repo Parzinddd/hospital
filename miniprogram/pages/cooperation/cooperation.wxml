@@ -1,2 +1,20 @@
-<!--pages/cooperation/cooperation.wxml-->
-<text>pages/cooperation/cooperation.wxml</text>
+<view class="{{classbackground}}"><image src="{{background}}"></image></view>
+<view class="header"><image class="logo" src="{{logo}}"></image></view>
+<view class="button_area">
+    <button style="width: 50vw; height:30pt;font-size: 10pt;" bindtap="translateToCh">简体中文</button>
+    <button style="width: 50vw; height:30pt;font-size: 10pt;" bindtap="translateToEng">English</button>
+</view>
+<view class="intro">
+    <view class="title">{{productService}}</view>
+    <view class="content">{{service}}</view>
+    <view class="space"></view>
+    <view class="title">{{businessPhilosophy}}</view>
+    <view class="content">{{concept1}}</view>
+    <view class="content">{{concept2}}</view>
+    <view class="content">{{concept3}}</view>
+    <view class="content">{{concept4}}</view>
+    <view class="space"></view>
+    <view class="title">{{serviceTeam}}</view>
+    <view class="content">{{team1}}</view>
+    <view class="content">{{team2}}</view>
+</view>

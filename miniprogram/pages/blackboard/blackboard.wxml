@@ -1,2 +1,12 @@
-<!--pages/blackboard/blackboard.wxml-->
-<text>pages/blackboard/blackboard.wxml</text>
+<view wx:for="{{newsList}}" wx:key="id" class="news-block">
+<navigator url="{{item.url}}">
+    <veiw class="news-header">
+        <text class="date">{{item.date}}</text>
+        <text class="title">{{item.title}}</text>
+    </veiw>
+    <view class="line"></view>
+    <view class="content_container" selectable="true" scroll-y="true" >     
+    <text class="content" disabled='true'  style="overflow-y:auto;overflow-x:auto;" selectable="true">{{item.content}}</text>
+  </view>
+</navigator>
+</view>

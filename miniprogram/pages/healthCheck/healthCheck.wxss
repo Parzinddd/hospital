@@ -1,1 +1,65 @@
-/* pages/healthCheck/healthCheck.wxss */
+page{
+    background-color: blanchedalmond;
+}
+.line{
+  height: 1rpx;
+  width: 90vw;
+  margin: auto;
+  background-color: rgb(85, 84, 84);
+}
+
+.space{
+  height: 5vw;
+}
+.title{
+  margin: 4vw auto;
+  font-size: 22pt;
+}
+
+.reserveSection{
+  background-color: white;
+  height: 10vw;
+  width: 95vw;
+  margin: auto;
+}
+
+.picker{
+  font-size: 13pt;
+  color: gray;
+  position: relative;
+  top: 2vw;
+}
+
+.section{
+  background-color: white;
+  height: 10vw;
+  width: 95vw;
+  margin: auto;
+}
+
+.reminder{
+  margin-top: 2vw;
+  margin-left: 6vw;
+}
+
+.section_title{
+  font-size: 16pt;
+  float: left;
+  margin:1vw 10vw;
+}
+
+.section picker{
+  font-size: 16pt;
+  color: gray;
+  margin-top:1vw ;
+}
+
+.section input{
+  height: 10vw;
+
+}
+
+button{
+  background-color: #00CC00;
+  color: white;
+}

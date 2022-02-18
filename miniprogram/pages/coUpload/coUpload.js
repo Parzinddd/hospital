@@ -6,7 +6,6 @@ Page({
      */
     data: {
         url: '../../resource/img/1.png',
-        path:"",
     },
 
     /**
@@ -68,11 +67,28 @@ Page({
     UploadImage(){
         wx,wx.chooseImage({
           success: (result) => {
+              let suffix = /\.\w+$/.exec(result.tempFilePaths[0]).input
+              wx.showLoading({
+                title: '图片上传中',
+                mask: true,
+              })
               wx.cloud.uploadFile({
-                  cloudPath:"686f-hospital-2ghumiuca447b728-1309306443/hsImg/"+result.tempFilePaths[0],
-                  filePath:result.tempFilePaths[0],
+                  cloudPath:"hsImg/" + new Date().getTime() +"-"+ Math.floor(Math.random() * 1000),
+                  filePath:suffix,
                   success: res=>{
                       console.log('上传成功',res)
+                      this.setData({
+                          url: suffix,
+                      })
+                  },
+                  fail: res=>{
+                      wx.showToast({ title: '系统错误' })
+                      console.log('上传失败',res)
+                  },
+                  complete: res=>{
+                      wx.hideLoading({
+                        success: (res) => {},
+                      })
                   }
               })
           }

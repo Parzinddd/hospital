@@ -1,0 +1,50 @@
+page{
+    background-color:#fbf8f1;
+}
+
+.line{
+    height: 0.1rpx;
+    width: 80vw;
+    margin-left:auto;
+    margin-right: auto;
+    background-color:rgb(184, 180, 180);
+}
+
+.join_block{
+    border-radius: 20px;
+    margin: 4vw auto auto;
+    background-color:white;
+    width: 90vw;
+}
+
+.projectHeader{
+    display: flex;
+    height: 15vw;
+    align-items: center;
+    padding-left: 4vw;
+}
+
+.projectName{ 
+    font-size: 14pt;
+}
+.projectResult{
+    color:rgb(88, 211, 17);
+    font-size: 14pt;
+}
+
+.projectInfo{
+    font-size: 10pt;
+}
+
+.projectDate{
+    margin-left: 4vw;
+    float: left;
+    color: rgb(107, 107, 107);
+
+}
+
+.projectStatus{
+    margin-right: 4vw;
+    color: rgb(0, 25, 250);
+    float: right;
+}

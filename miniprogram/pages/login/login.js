@@ -1,66 +1,29 @@
-// pages/login/login.js
 Page({
 
     /**
      * 页面的初始数据
      */
+     //首先设置参数userInfo为空，hasUserInfo为false，表示没有登录
     data: {
-
+ 
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
+  
+    onLoad: function () {
+      
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
+    //getUserInfo函数绑定了按钮
+    
+  
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
+     //绑定了退出登录按钮，通过清空userInfo并且设置hasUserInfo为false来退出登录
+    
+  
     /**
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+      
     }
 })

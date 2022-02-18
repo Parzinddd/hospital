@@ -1,2 +1,36 @@
-<!--pages/myInfo/myInfo.wxml-->
-<text>pages/myInfo/myInfo.wxml</text>
+<block wx:if="{{!hasUserInfo}}">
+<button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="btn">获取头像昵称</button>
+</block>
+<block wx:else>
+    <view class="user_header">
+        <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
+        <view class="user_header_title">
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <text class="userPhoneNumber">{{userPhoneNumber}}</text>
+        </view>
+    </view>
+    <view class="space_1"></view>
+
+    <view class="user_part">
+        <image src="{{myData}}"></image>
+        <button  class="myData" style="width:85vw;height: 13vw;" bindtap="goToInfo">基本信息</button>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="user_part">
+        <image src="{{hsHistory}}"></image>
+        <button class="hsHistory" style="width:85vw;height: 13vw;" bindtap="goToHsHistory" >历史核酸记录</button>
+    </view>
+
+
+    <view class="line"></view>
+
+    <view class="user_part">
+        <image src="{{joinHistory}}"></image>
+        <button class="joinHistory" style="width:85vw;height: 13vw;" bindtap="goToJoinHistory" >历史参加记录</button>
+    </view>
+</block>
+
+
+

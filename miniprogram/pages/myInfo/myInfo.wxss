@@ -1,1 +1,85 @@
-/* pages/myInfo/myInfo.wxss */
+page{
+    background-color:#fbf8f1;
+}
+
+.btn{
+    margin-top: 40vw;
+    border: 2rpx solid#32cd32;
+}
+
+.space_1{
+    height:5vw;
+}
+
+.line{
+    margin-left: 15vw;
+    height: 2rpx;
+    width: 85vw;
+    background-color: rgb(219, 219, 219);
+}
+
+.user_header{
+    background-color: white;
+    height: 30vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.userinfo-avatar{
+    width: 22vw;
+    height: 22vw;
+    margin:3vw 3vw;
+    border-radius: 10rpx;
+}
+
+.user_header_title{
+    display: flex;
+    flex-direction: column;
+}
+
+.userinfo-nickname{
+    font-size: 12pt;
+    margin:7vw 5vw;
+}
+
+.userPhoneNumber{
+    font-size: 10pt;
+    color: #BABABA;
+    margin:-5vw 5vw;
+}
+
+.user_part{
+    background-color: white;
+    height: 13vw;
+}
+
+.user_part image{
+    float: left;
+    width: 6vw;
+    height: 6vw;
+    margin-top: 4vw;
+    margin-left: 4vw;
+}
+
+.myData{
+    font-size: 10pt;
+    font-weight: 400;
+    float: right;
+    padding-top: 5vw;
+
+}
+
+.hsHistory{
+    font-size: 10pt;
+    font-weight: 400;
+    float: right;
+    padding-top: 5vw;
+   
+}
+
+.joinHistory{
+    font-size: 10pt;
+    font-weight: 400;
+    float: right;
+    padding-top: 5vw;
+}

@@ -5,8 +5,27 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        userInfo:{},
+        hasUserInfo: false,
+        canIUseGetUserProfile: false,
+        userPhoneNumber:'18521303530',
+        myData:'../../resource/img/my.jpg',
+        hsHistory:'../../resource/img/hsHistory.jpg',
+        joinHistory:'../../resource/img/joinHistory.jpg',
+        userInfo:{}
     },
+
+    getUserProfile(e) {
+        wx.getUserProfile({
+          desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+          success: (res) => {
+            this.setData({
+              userInfo: res.userInfo,
+              hasUserInfo: true
+            })
+          }
+        })
+      },
 
     /**
      * 生命周期函数--监听页面加载
@@ -19,9 +38,30 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        if (wx.getUserProfile) {
+            this.setData({
+              canIUseGetUserProfile: true
+            })
+          }
     },
 
+    goToInfo:function(){
+        wx.navigateTo({
+          url: '../baseInfo/baseInfo',
+        })
+    },
+
+    goToHsHistory:function(){
+        wx.navigateTo({
+          url: '../hsHistory/hsHistory',
+        })
+    },
+    
+    goToJoinHistory:function(){
+        wx.navigateTo({
+          url: '../joinHistory/joinHistory',
+        })
+    },
     /**
      * 生命周期函数--监听页面显示
      */

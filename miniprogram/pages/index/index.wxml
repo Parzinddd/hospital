@@ -14,8 +14,42 @@
   <button class="index_button"  bindtap="go2healthCheck">体检预约</button>
   <button class="index_button"  bindtap="go2cooperation">商业接洽</button>
 </view>
-<view class="scroll-view-blackboard">
+
 <view class="blackboard">
-<button class="blackboard_btn" bindtap="go2blackboard">公告栏</button>
+<button class="blackboard_btn" bindtap="go2blackboard" style="width: 90vw;">公告栏</button>
+<view class="line"></view>
+<view class="news" wx:for="{{newsArray}}" wx:key="id">
+  <view class="news_section">
+    <text bindtap="">{{item.name}}</text>
+  </view>
+  <view class="line"></view>
 </view>
+
+<!-- <view class="news_section">
+  <text>{{news_2}}</text>
+</view>
+<view class="line"></view>
+<view class="news_section">
+  <text>{{news_3}}</text>
+</view>
+<view class="line"></view>
+<view class="news_section">
+  <text>{{news_4}}</text>
+</view>
+<view class="line"></view>
+<view class="news_section">
+  <text>{{news_5}}</text>
+</view>
+<view class="line"></view>
+<view class="news_section">
+  <text>{{news_5}}</text>
+</view>
+<view class="line"></view>
+<view class="news_section">
+  <text>{{news_5}}</text>
+</view>
+<view class="line"></view>
+<view class="news_section">
+  <text>{{news_5}}</text>
+</view> -->
 </view>

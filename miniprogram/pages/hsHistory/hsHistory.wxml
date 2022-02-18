@@ -1,0 +1,11 @@
+<view class="join_block" wx:for="{{projectList}}" wx:key="id">
+    <view class="projectHeader">
+        <text class="projectName">{{item.name}}:</text>
+        <text class="projectResult">{{item.result}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="projectInfo">
+        <veiw class="projectDate">{{item.date}}</veiw>
+        <veiw class="projectStatus">{{item.status}}</veiw>
+    </view>
+</view>

@@ -1,36 +1,30 @@
-<view class='containt'>
-  <scroll-view class="scroll-view_H" scroll-x>
-    <view class='list' style='width:{{ width }}rpx'>
-      <view 
-      bindtap="select" 
-      wx:for="{{ calendar }}" 
-      wx:for-item="item" 
-      wx:for-index="index" 
-      data-index="{{ index }}" 
-      class='listItem {{index==currentIndex? "current":""}}' 
-      wx:key='' data-date="{{ item.date}}">
-        <text class='name'>{{ item.week }}</text>
-        <text class='date'>{{ item.date }}</text>
-      </view>
+<view class="title">白细胞采集预约</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="reserveSection">
+  <view class="section_title">选择预约日期</view>
+  <picker name="reserveTime" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
     </view>
-  </scroll-view>
-  <view class='time'>
-    <view 
-    wx:for="{{ timeArr }}" 
-    wx:for-item="timeItem" 
-    wx:for-index="timeIndex" 
-    data-Tindex="{{ timeIndex }}" 
-    data-time="{{ timeItem.time}}" 
-    bindtap='selectTime' 
-    class='listItem {{ currentTime==timeIndex? "current":"" }}' 
-    wx:key=''>
-      <text>{{ timeItem.time }}</text>
-      <text>{{ timeItem.status }}</text>
-    </view>
-  </view>
-  <view class='operate'>
-   <button class='del'>删除</button>
-   <button class='save'>保存</button>
-  </view>
+  </picker>
 </view>
 
+<view class="space"></view>
+  <view class="section">
+    <view class="section_title">预计出发时间</view>
+    <input name="departure_time" placeholder="请输入4位数字" value="{{departure_time}}" type="number"/>
+  </view>
+  <view class="line"></view>
+  <view class="section">
+    <view class="section_title">预计抵达时间</view>
+    <input name="arrival_time" placeholder="请输入4位数字" value="{{arrival_time}}" type="number"/>
+  </view>
+  <view class="reminderSection">
+    <view class="reminder">贴心备注:</view>
+    <view class="reminder">请用24小时制并输入四位数字</view>
+    <view class="reminder">例如:0800（早上八点）、1530（下午三点三十分）</view>
+  </view>
+  <view class="space"></view>
+  <button style="width:50%;" formType="submit" >提交</button>
+</form>

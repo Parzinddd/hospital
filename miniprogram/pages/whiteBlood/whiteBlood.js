@@ -1,128 +1,97 @@
-// pages/orderTime/index.js
 Page({
-    /**
-     * 页面的初始数据
-     */
-    data: {
-      calendar:[],
-      width:0,
-      currentIndex:0,
-      currentTime: 0,
-      timeArr: [
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" },
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-10:00", "status": "可预约" }, 
-              { "time": "8:00-22:00", "status": "可预约" }
-              ]    
-    },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-      var that=this;
-      function getThisMonthDays(year, month) {
-        return new Date(year, month, 0).getDate();
-      }
-    // 计算每月第一天是星期几
-      function getFirstDayOfWeek(year, month) {
-        return new Date(Date.UTC(year, month - 1, 1)).getDay();
-      }
-      const date = new Date();
-      const cur_year = date.getFullYear();
-      const cur_month = date.getMonth() + 1;
-      const cur_date=date.getDate();
-      const weeks_ch = ['日', '一', '二', '三', '四', '五', '六'];
-      //利用构造函数创建对象
-      function calendar(date,week){
-        this.date=cur_year+'-'+cur_month+'-'+date;
-        if(date==cur_date){
-          this.week = "今天";
-        }else if(date==cur_date+1){
-          this.week = "明天";
-        }else{
-          this.week = '星期' + week;
+  data: {
+    multiArray: [['2/11', '2/12'], ['8:00 - 9:00', '9:00 - 10:00', '10:00 - 11:00', '11:00 - 12:00']],
+    objectMultiArray: [
+      [
+        {
+          id: 0,
+          name: '2/11',
+        },
+        {
+          id: 1,
+          name: '2/12'
         }
-      }
-      //当前月份的天数
-      var monthLength= getThisMonthDays(cur_year, cur_month)
-      //当前月份的第一天是星期几
-      var week = getFirstDayOfWeek(cur_year, cur_month)
-      var x = week;
-      for(var i=1;i<=monthLength;i++){
-        //当循环完一周后，初始化再次循环
-        if(x>6){
-          x=0;
+      ], [
+        {
+          id: 0,
+          name: '8:00 - 9:00'
+        },
+        {
+          id: 1,
+          name: '9:00 - 10:00'
+        },
+        {
+          id: 2,
+          name: '10:00 - 11:00'
+        },
+        {
+          id: 3,
+          name: '11:00 - 12:00'
+        },
+      ]
+    ],
+    multiIndex: [0, 0, 0],
+    departure_time: '',
+    arrival_time: ''
+  },
+
+  // bindDatePickerChange: function (e) {
+  //   console.log('用戶预约日期改为', e.detail.value)
+  //   this.setData({
+  //     dateIndex: e.detail.value
+  //   })
+  // },
+
+  // bindTimePickerChange: function (e) {
+  //   console.log('用戶预约时间改为', e.detail.value)
+  //   this.setData({
+  //     timeIndex: e.detail.value
+  //   })
+  // },
+
+  bindMultiPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      multiIndex: e.detail.value
+    })
+  },
+  bindMultiPickerColumnChange: function (e) {
+    console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+    var data = {
+      multiArray: this.data.multiArray,
+      multiIndex: this.data.multiIndex
+    };
+    data.multiIndex[e.detail.column] = e.detail.value;
+    switch (e.detail.column) {
+      case 0:
+        switch (data.multiIndex[0]) {
+          case 0:
+            data.multiArray[1] = ['8:00 - 9:00', '9:00 - 10:00', '10:00 - 11:00', '11:00 - 12:00'];
+            break;
+          case 1:
+            data.multiArray[1] = ['13:00 - 14:00', '14:00 - 15:00'];
+            break;
         }
-        //利用构造函数创建对象
-        that.data.calendar[i] = new calendar(i, [weeks_ch[x]][0])
-        x++;
-      }
-      //限制要渲染的日历数据天数为7天以内（用户体验）
-      var flag = that.data.calendar.splice(cur_date, that.data.calendar.length - cur_date <= 7 ? that.data.calendar.length:7)
-      that.setData({
-        calendar: flag
-      })
-      //设置scroll-view的子容器的宽度
-      that.setData({
-        width: 186 * parseInt(that.data.calendar.length - cur_date <= 7 ? that.data.calendar.length : 7)
-      })
-    },
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-    },
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-    },
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-    },
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-    },
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-    },
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-    },
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-    },
-    select:function(event){
-      //为上半部分的点击事件
-      this.setData({
-        currentIndex: event.currentTarget.dataset.index
-      })
-      console.log(event.currentTarget.dataset.date)
-    },
-    selectTime:function(event){
-      //为下半部分的点击事件
-      this.setData({
-        currentTime: event.currentTarget.dataset.tindex
-      })
-        console.log(event.currentTarget.dataset.time)
+        data.multiIndex[1] = 0;
+        break;
     }
-  })
+    console.log(data.multiIndex);
+    this.setData(data);
+  },
+
+  formSubmit: function(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    wx.showToast({
+      title: '预约成功',
+      icon: 'success',
+      duration: 2000,
+      success:()=>{
+        setTimeout(()=> {
+            wx.switchTab({
+                url:'/pages/index/index'
+            })
+        },2000)
+    }
+    })
+  },
+})
