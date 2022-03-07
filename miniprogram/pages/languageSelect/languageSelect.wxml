@@ -1,0 +1,11 @@
+<view class="container" style="width: 348rpx; height: 435rpx; display: flex; box-sizing: border-box">
+<radio-group bindchange="radiochange">
+<view><radio value='0'>简体中文</radio></view>
+<view class="space"></view>
+<view><radio value='1'>English</radio></view>
+<view class="space"></view>
+<view><radio value='2'>한국어 공부 해요.</radio></view>
+<view class="space"></view>
+<button type="primary" bindtap="letsGo">OK</button>
+</radio-group>
+</view>

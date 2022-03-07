@@ -1,0 +1,12 @@
+<view class="join_block" wx:for="{{healthCheckList}}" wx:key="id">
+    <view class="projectHeader">
+        <view class="projectName">体检报告</view>
+        <view class="projectResult" bindtap="checkPaper" data-id="{{item.id}}" >点我查看</view>
+    </view>
+    
+    <view class="projectInfo">
+        <view class="line"></view>
+        <veiw class="projectDate">预约时间:{{item.date}}</veiw>
+        <veiw class="projectStatus">{{item.status}}</veiw>
+    </view>
+</view>

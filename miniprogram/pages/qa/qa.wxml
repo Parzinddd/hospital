@@ -1,2 +1,102 @@
-<!--pages/qa/qa.wxml-->
-<text>pages/qa/qa.wxml</text>
+<view class="QATitle">Q&A</view>
+<view class="mainSection">
+<block wx:if="{{language == 0}}">
+    <view class="question"> 
+        <view class="qN">1.</view>
+        <view class="qM">{{c_q1}}</view>
+    </view>
+    <view class="answer">{{c_a1}}</view>
+    <view class="question"> 
+        <view class="qN">2.</view>
+        <view class="qM">{{c_q2}}</view>
+    </view>
+    <view class="answer">{{c_a2}}</view>
+    <view class="question"> 
+        <view class="qN">3.</view>
+        <view class="qM">{{c_q3}}</view>
+    </view>
+    <view class="answer">{{c_a3}}</view>
+    <view class="question"> 
+        <view class="qN">4.</view>
+        <view class="qM">{{c_q4}}</view>
+    </view>
+    <view class="answer">{{c_a4}}</view>
+    <view class="question"> 
+        <view class="qN">5.</view>
+        <view class="qM">{{c_q5}}</view>
+    </view>
+    <view class="answer">{{c_a5}}</view>
+    <view class="question"> 
+        <view class="qN">6.</view>
+        <view class="qM">{{c_q6}}</view>
+    </view>
+    <view class="answer">{{c_a6}}</view>
+    <button open-type="contact" class="kefu">联系客服</button>
+</block>
+<block wx:elif="{{language == 1}}">
+    <view class="question"> 
+        <view class="qN">1.</view>
+        <view class="qM">{{e_q1}}</view>
+    </view>
+    <view class="answer">{{e_a1}}</view>
+    <view class="question"> 
+        <view class="qN">2.</view>
+        <view class="qM">{{e_q2}}</view>
+    </view>
+    <view class="answer">{{e_a2}}</view>
+    <view class="question"> 
+        <view class="qN">3.</view>
+        <view class="qM">{{e_q3}}</view>
+    </view>
+    <view class="answer">{{e_a3}}</view>
+    <view class="question"> 
+        <view class="qN">4.</view>
+        <view class="qM">{{e_q4}}</view>
+    </view>
+    <view class="answer">{{e_a4}}</view>
+    <view class="question"> 
+        <view class="qN">5.</view>
+        <view class="qM">{{e_q5}}</view>
+    </view>
+    <view class="answer">{{e_a5}}</view>
+    <view class="question"> 
+        <view class="qN">6.</view>
+        <view class="qM">{{e_q6}}</view>
+    </view>
+    <view class="answer">{{e_a6}}</view>
+    <button open-type="contact" style="width: 80vw;" class="kefu">Contact Customer Service</button>
+</block>
+<block wx:else>
+    <view class="question"> 
+        <view class="qN">1.</view>
+        <view class="qM">{{k_q1}}</view>
+    </view>
+    <view class="answer">{{k_a1}}</view>
+    <view class="question"> 
+        <view class="qN">2.</view>
+        <view class="qM">{{k_q2}}</view>
+    </view>
+    <view class="answer">{{k_a2}}</view>
+    <view class="question"> 
+        <view class="qN">3.</view>
+        <view class="qM">{{k_q3}}</view>
+    </view>
+    <view class="answer">{{k_a3}}</view>
+    <view class="question"> 
+        <view class="qN">4.</view>
+        <view class="qM">{{k_q4}}</view>
+    </view>
+    <view class="answer">{{k_a4}}</view>
+    <view class="question"> 
+        <view class="qN">5.</view>
+        <view class="qM">{{k_q5}}</view>
+    </view>
+    <view class="answer">{{k_a5}}</view>
+    <view class="question"> 
+        <view class="qN">6.</view>
+        <view class="qM">{{k_q6}}</view>
+    </view>
+    <view class="answer">{{k_a6}}</view>
+    <button open-type="contact" style="width: 70vw;" class="kefu">고객센터에 연락하다</button>
+</block>
+</view>

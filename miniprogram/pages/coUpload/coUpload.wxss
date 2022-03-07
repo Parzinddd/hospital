@@ -1,12 +1,12 @@
 /* pages/coUpload/coUpload.wxss */
 page{
-    background-color: blanchedalmond;
+    background-color: white;
   }
   
   .up{
     position: relative;
-    left: 0rpx; 
-    top: 924rpx;
+    left: 0rpx;
+    top: 183rpx;
     background-color: #00CC00;
     color: white;
   }
@@ -17,12 +17,51 @@ page{
     margin-right: auto;
     margin-top: 8%;
   }
+
+  .block_1{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .image_container{
+    width: 656rpx; 
+    height: 716rpx;
+    border-style: solid;
+  }
+  .image_show{
+    width: 656rpx;
+    height: 716rpx;
+  }
+  .remove_button{
+    width: 100rpx;
+    height: 100rpx;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    top:-50rpx;
+    right:-50rpx;
+  }
   
-  .img{
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 685rpx; 
-    height: 749rpx; 
-    display: block; 
-    box-sizing: border-box
+  .remove_button image{
+    width: 30rpx;
+    height: 30rpx;
+    position: relative;
+    top: 50rpx;
+    left: 15rpx;
+  }
+    
+  .uploadImgBtn{
+    width: 150rpx;
+    height: 150rpx;
+    text-align: center;
+    line-height: 140rpx;
+    border: 6rpx solid #f0f0f0;
+    float: left;
+    margin-left: 6vw;
+    margin-top: 4vw;
+  }
+  
+  .uploadImgBtn text{
+    font-size: 25rpx;
+    color: #999;
   }

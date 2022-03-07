@@ -1,55 +1,83 @@
-<!--index.wxml-->
-<swiper class="cover_swiper" indicator-dots='true' display-multiple-items='1' current='{{ centerItem }}' bindchange='handleSwiperChange'  previous-margin='0' next-margin='0' autoplay='true' circular='true' interval='5000'>
-  <block wx:for="{{coverList}}" wx:key="id">
-    <swiper-item>
-      <view class='imageBox' style='text-align:center'>
-      <view class='mask' wx:if='{{ index != centerItem }}'></view>
-      <image src="{{item.url}}" mode="aspectFill" style="height: 100px;" /></view>
-    </swiper-item>
+<view class="index_top">
+  <block wx:if="{{language == 0}}">
+    <view class="navigator">
+      <view bindtap="goToAble" class="navigator_icon">
+        <image src="../../resource/img/kzxm.jpg"></image><text>可做项目</text>
+      </view>
+      <view bindtap="ifLogin" class="navigator_icon">
+        <image src="../../resource/img/hssc.jpg"></image><text>资料上传</text>
+      </view>
+      <view bindtap="goToHealthCheck" class="navigator_icon">
+        <image src="../../resource/img/tjyy.jpg"></image><text>体检预约</text>
+      </view>
+      <view bindtap="goToCooperation" class="navigator_icon">
+        <image src="../../resource/img/syjq.jpg"></image><text>商业接洽</text>
+      </view>
+    </view>
   </block>
-</swiper>
-<view style="display: flex;background-color:blanchedalmond;">
-  <button class="index_button"  bindtap="go2able">可做项目</button>
-  <button class="index_button"  bindtap="go2CoUpload">核酸上传</button>
-  <button class="index_button"  bindtap="go2healthCheck">体检预约</button>
-  <button class="index_button"  bindtap="go2cooperation">商业接洽</button>
+  <block wx:elif="{{language == 1}}">
+    <view style="display: flex;background-color: white;" class="navigator_en">
+      <navigator url="/pages/able/able" class="navigator_icon">
+        <image src="../../resource/img/kzxm.jpg"></image><text>Available Projects</text>
+      </navigator>
+      <navigator bindtap="ifLogin" class="navigator_icon">
+        <image src="../../resource/img/hssc.jpg"></image><text>Document Upload</text>
+      </navigator>
+      <navigator url="/pages/healthCheck/healthCheck" class="navigator_icon">
+        <image src="../../resource/img/tjyy.jpg"></image><text>Physical Examination</text>
+      </navigator>
+      <navigator url="/pages/cooperation/cooperation" class="navigator_icon">
+        <image src="../../resource/img/syjq.jpg"></image><text>Business Contact</text>
+      </navigator>
+    </view>
+  </block>
+  <block wx:else>
+    <view style="display: flex;background-color: white;" class="navigator">
+      <navigator url="/pages/able/able" class="navigator_icon">
+        <image src="../../resource/img/kzxm.jpg"></image><text>사용 가능한 프로젝트</text>
+      </navigator>
+      <navigator bindtap="ifLogin" class="navigator_icon">
+        <image src="../../resource/img/hssc.jpg"></image><text>데이터 업로드</text>
+      </navigator>
+      <navigator url="/pages/healthCheck/healthCheck" class="navigator_icon">
+        <image src="../../resource/img/tjyy.jpg"></image><text>신체 검사</text>
+      </navigator>
+      <navigator url="/pages/cooperation/cooperation" class="navigator_icon">
+        <image src="../../resource/img/syjq.jpg"></image><text>비즈니스 연락처</text>
+      </navigator>
+    </view>
+  </block>
 </view>
 
-<view class="blackboard">
-<button class="blackboard_btn" bindtap="go2blackboard" style="width: 90vw;">公告栏</button>
-<view class="line"></view>
-<view class="news" wx:for="{{newsArray}}" wx:key="id">
-  <view class="news_section">
-    <text bindtap="">{{item.name}}</text>
+
+<view class="index_bottom">
+  <swiper class="cover_swiper" easing-function="easeInCubic" indicator-dots='true' display-multiple-items='1' current='{{ centerItem }}' bindchange='handleSwiperChange' previous-margin='0' next-margin='0' autoplay="true" interval="6000" circular='false'>
+    <block wx:for="{{coverList}}" wx:key="id">
+      <swiper-item>
+        <view class='imageBox'>
+          <view class='mask' wx:if='{{ index != centerItem }}'></view>
+          <image src="{{item.url}}" mode="scaleToFill" class="ad_image" />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="button_part">
+    <view class="button_block">
+      <view><button style="width: 35vw;height: 40vw;" catchtap="news1">{{test}}</button></view>
+      <view><button style="width: 35vw;height: 40vw;" catchtap="news2">{{test}}</button></view>
+    </view>
+    <view class="space1"></view>
+    <view class="button_block">
+      <view><button style="width: 35vw;height: 40vw;" catchtap="news3">{{test}}</button></view>
+      <view><button style="width: 35vw;height: 40vw;" catchtap="news4">{{test}}</button></view>
+    </view>
   </view>
-  <view class="line"></view>
-</view>
 
-<!-- <view class="news_section">
-  <text>{{news_2}}</text>
-</view>
-<view class="line"></view>
-<view class="news_section">
-  <text>{{news_3}}</text>
-</view>
-<view class="line"></view>
-<view class="news_section">
-  <text>{{news_4}}</text>
-</view>
-<view class="line"></view>
-<view class="news_section">
-  <text>{{news_5}}</text>
-</view>
-<view class="line"></view>
-<view class="news_section">
-  <text>{{news_5}}</text>
-</view>
-<view class="line"></view>
-<view class="news_section">
-  <text>{{news_5}}</text>
-</view>
-<view class="line"></view>
-<view class="news_section">
-  <text>{{news_5}}</text>
-</view> -->
+
+  <view class="blackboard">
+    <text class="blackboard_btn">交通方式</text>
+    <view class="line"></view>
+    <image class="mapImg" src="{{mapImg}}"></image>
+  </view>
 </view>

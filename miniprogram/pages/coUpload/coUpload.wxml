@@ -1,4 +1,19 @@
 <!--pages/coUpload/coUpload.wxml-->
 <text class="title" >核酸检测报告上传</text>
-<button class = "up" bindtap="UploadImage" >点击上传</button>
-<image class = "img"  mode="scaleToFill" src="{{url}}" ></image>
+<view class="block_1" style="width: 656rpx; height: 716rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 107rpx">
+  <!--图片上传区-->
+  <block wx:for="{{images}}" wx:key="*this">
+    <view class="image_container">
+      <!--图片预览区-->
+      <image class="image_show" src="{{item}}" mode="scaleToFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+      <!--移除图片按钮-->
+      <view class="remove_button" data-idx="{{index}}" bindtap="removeImage">
+              <image src="../../resource/img/del.png" ></image>
+      </view>
+    </view>
+  </block>
+    <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{images.length < 1}}" style="width: 597rpx; height: 700rpx; display: block; box-sizing: border-box; left: -15rpx; top: -17rpx; position: relative">
+        <text style="display: flex; height: 100%; align-items: center; justify-content: center; position: relative; left: 0rpx; top: -8rpx">+添加照片</text>
+    </view>
+</view>
+<button class="up" bindtap="uploadImage">上传图片</button>

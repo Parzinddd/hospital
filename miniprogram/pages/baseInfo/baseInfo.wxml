@@ -10,6 +10,15 @@
   <view class="inputPart">
    <text class="Title">证件号</text><input type="idcard" name="idnumber" id="use" placeholder="输入您的证件号" placeholder-style="text-align:right" value="{{idnumber}}"></input>
   </view>
+  <view wx:if="{{index == 3}}" class="inputPart">
+   <text class="Title">护照上传</text>
+   <block wx:if="{{path == ''}}">
+   <button type="primary" name="idnumber" class="passportUpload" bindtap="uploadPassport" value="{{idnumber}}">护照上传</button>
+  </block>
+  <block wx:else>
+   <button name="idnumber" class="passportUpload_" style="width:50vw;" bindtap="uploadPassport" value="{{idnumber}}">已上传 点击更改</button>
+  </block>
+  </view>
   <view class="inputPart">
    <text class="Title">姓名</text><input type="text" name="username" id="use" placeholder="输入您的姓名" placeholder-style="text-align:right" value="{{username}}"></input>
   </view>
@@ -32,12 +41,17 @@
    <text class="Title">手机号码</text><input type="number" maxlength="11" name="phonenumber" id="use" placeholder="输入您的手机号码" placeholder-style="text-align:right" value="{{phonenumber}}"></input>
   </view>
   <view class="inputPart">
-    <text class="Title">身高</text><input type="number" name="height" id="use" placeholder="输入您的身高" placeholder-style="text-align:right" value="{{height}}"></input>
+    <text class="Title">身高</text><input type="number" name="height" id="use" placeholder="输入您的身高-cm" placeholder-style="text-align:right" value="{{height}}"></input>
   </view>
   <view class="inputPart">
-    <text class="Title">体重</text><input type="number" name="weight" id="use" placeholder="输入您的体重" placeholder-style="text-align:right" value="{{weight}}"></input>
+    <text class="Title">体重</text><input type="number" name="weight" id="use" placeholder="输入您的体重-kg" placeholder-style="text-align:right" value="{{weight}}"></input>
   </view>
-  <button bindtap="goto_index" id="btn1" form-type="submit">保存</button>
+  <view class="inputPart">
+    <text class="Title">电子邮箱</text><input name="email" id="use" placeholder="输入你的电子邮箱" placeholder-style="text-align:right" value="{{zfb}}"></input>
+  </view>
+  <view class="btn_part">
+    <button bindtap="goto_index" id="btn1" form-type="submit">保存</button>
+  </view>
 </form>
 
 </view>

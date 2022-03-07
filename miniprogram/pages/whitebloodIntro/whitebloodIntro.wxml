@@ -1,0 +1,6 @@
+<image src="cloud://hospital-2ghumiuca447b728.686f-hospital-2ghumiuca447b728-1309306443/resourceImg/whitebloodIntro/WechatIMG3.jpeg"></image>
+<image src="cloud://hospital-2ghumiuca447b728.686f-hospital-2ghumiuca447b728-1309306443/resourceImg/whitebloodIntro/WechatIMG4.jpeg"></image>
+<image src="cloud://hospital-2ghumiuca447b728.686f-hospital-2ghumiuca447b728-1309306443/resourceImg/whitebloodIntro/WechatIMG5.jpeg"></image>
+<image src="cloud://hospital-2ghumiuca447b728.686f-hospital-2ghumiuca447b728-1309306443/resourceImg/whitebloodIntro/WechatIMG7.jpeg"></image>
+<image src="cloud://hospital-2ghumiuca447b728.686f-hospital-2ghumiuca447b728-1309306443/resourceImg/whitebloodIntro/WechatIMG8.jpeg"></image>
+<button type="primary" bindtap="goToReserve">进入预约</button>         

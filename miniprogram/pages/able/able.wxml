@@ -1,1 +1,11 @@
-<button class="btn" bindtap="go2whiteBlood" style="width: 70%;">白细胞采集</button>
+<block wx:if="{{language == 0}}">
+<button class="btn" bindtap="go2whiteBlood" style="width: 60%;">成分血项目</button>
+<button class="btn" bindtap="go2whiteBlood" style="width: 60%;">項目2</button>
+<button class="btn" bindtap="go2whiteBlood" style="width: 60%;">項目3</button>
+</block>
+<block wx:elif="{{language == 1}}">
+<button class="btn" bindtap="go2whiteBlood" style="width: 80%;">White Blood Cell Collection</button>
+</block>
+<block wx:else>
+<button class="btn" bindtap="go2whiteBlood" style="width: 60%;">백혈구 수집</button>
+</block>

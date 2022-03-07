@@ -1,36 +1,105 @@
-<block wx:if="{{!hasUserInfo}}">
-<button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="btn">获取头像昵称</button>
+<block wx:if="{{language == 0}}">    
+    <block wx:if="{{!hasUserInfo}}">
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="btn">授权登入</button>
+    </block>
+    <block wx:else>
+        <view class="user_header">
+            <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
+            <view class="user_header_title">
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
+        </view>
+        <view class="space_1"></view>
+        <view class="space_1"></view>
+        <view class="user_part">
+            <image src="{{myData}}"></image>
+            <button  class="myData" style="width:85vw;height: 13vw;" bindtap="goToInfo">基本信息</button>
+        </view>
+
+        
+
+        <view class="line"></view>
+
+        <view class="user_part">
+            <image src="{{joinHistory}}"></image>
+            <button class="joinHistory" style="width:85vw;height: 13vw;" bindtap="goToJoinHistory" >参加记录</button>
+        </view>
+
+        <view class="line"></view>
+
+        <view class="user_part">
+            <image src="{{healthCheckHistory}}"></image>
+            <button class="healthCheckPaper" style="width:85vw;height: 13vw;" bindtap="goTohealthCheckPaper">体检详情</button>
+        </view>
+    </block>
+</block>
+
+<block wx:elif="{{language == 1}}">
+    <block wx:if="{{!hasUserInfo}}">
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" style="width: 80vw;" class="btn">Get Avatar & Nickname</button>
+    </block>
+    <block wx:else>
+        <view class="user_header">
+            <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
+            <view class="user_header_title">
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
+        </view>
+        <view class="space_1"></view>
+
+        <view class="user_part">
+            <image src="{{myData}}"></image>
+            <button  class="myData" style="width:85vw;height: 13vw;" bindtap="goToInfo">Essential Information</button>
+        </view>
+
+        
+
+        <view class="line"></view>
+
+        <view class="user_part">
+            <image src="{{joinHistory}}"></image>
+            <button class="joinHistory" style="width:85vw;height: 13vw;" bindtap="goToJoinHistory" >Participation Record</button>
+        </view>
+
+        <view class="line"></view>
+
+        <view class="user_part">
+            <image src="{{healthCheckHistory}}"></image>
+            <button class="healthCheckPaper" style="width:85vw;height: 13vw;" bindtap="goTohealthCheckPaper">Physical Examination Details</button>
+        </view>
+    </block>
 </block>
 <block wx:else>
-    <view class="user_header">
-        <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
-        <view class="user_header_title">
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-            <text class="userPhoneNumber">{{userPhoneNumber}}</text>
+    <block wx:if="{{!hasUserInfo}}">
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" style="width:60vw;" class="btn">아바타 닉네임 가져오기</button>
+    </block>
+    <block wx:else>
+        <view class="user_header">
+            <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
+            <view class="user_header_title">
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
         </view>
-    </view>
-    <view class="space_1"></view>
+        <view class="space_1"></view>
 
-    <view class="user_part">
-        <image src="{{myData}}"></image>
-        <button  class="myData" style="width:85vw;height: 13vw;" bindtap="goToInfo">基本信息</button>
-    </view>
+        <view class="user_part">
+            <image src="{{myData}}"></image>
+            <button  class="myData" style="width:85vw;height: 13vw;" bindtap="goToInfo">기본 정보</button>
+        </view>
+        <view class="line"></view>
 
-    <view class="line"></view>
+        <view class="user_part">
+            <image src="{{joinHistory}}"></image>
+            <button class="joinHistory" style="width:85vw;height: 13vw;" bindtap="goToJoinHistory" >참여 레코드</button>
+        </view>
 
-    <view class="user_part">
-        <image src="{{hsHistory}}"></image>
-        <button class="hsHistory" style="width:85vw;height: 13vw;" bindtap="goToHsHistory" >历史核酸记录</button>
-    </view>
+        <view class="line"></view>
 
-
-    <view class="line"></view>
-
-    <view class="user_part">
-        <image src="{{joinHistory}}"></image>
-        <button class="joinHistory" style="width:85vw;height: 13vw;" bindtap="goToJoinHistory" >历史参加记录</button>
-    </view>
+        <view class="user_part">
+            <image src="{{healthCheckHistory}}"></image>
+            <button class="healthCheckPaper" style="width:85vw;height: 13vw;" bindtap="goTohealthCheckPaper" >신체검사 내용</button>
+        </view>
+    </block>
 </block>
-
 
 

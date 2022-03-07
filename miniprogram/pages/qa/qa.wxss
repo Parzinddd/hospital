@@ -1,1 +1,41 @@
-/* pages/qa/qa.wxss */
+page{
+    background-color: rgb(252, 230, 206);
+}
+.QATitle{
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    height: 12vw;
+    font-size: 16pt;
+    font-weight: 700;
+    background-color: rgb(214, 118, 28);
+    color: rgb(119, 60, 5);
+}
+.mainSection{
+    padding: 1vw;
+}
+.question{
+    display: flex;
+    flex-direction: row;
+    font-size: 13pt;
+    font-weight: 600;
+}
+.qN{
+    width: 5vw;
+}
+.qM{
+    width: 95vw;
+}
+.answer{
+    padding-left: 5vw;
+    padding-right: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+}
+.kefu{
+    margin-top: 10vw;
+    border: 2rpx solid#32cd32;
+    background-color: #32cd32;
+    color: white;
+    margin-bottom: 5vw;
+}

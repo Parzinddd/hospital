@@ -1,32 +1,11 @@
-// pages/joinHistory/joinHistory.js
+// pages/news2/news2.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        projectList:[{
-            id:0,
-            name:'新冠核酸检测结果',
-            result:'阴性',
-            date:'2022-2-18',
-            status:'已通过'
-        },
-        {
-            id:1,
-            name:'新冠核酸检测结果',
-            result:'阴性',
-            date:'2022-2-17',
-            status:'已通过'
-        },
-        {
-            id:2,
-            name:'新冠核酸检测结果',
-            result:'阴性',
-            date:'2022-2-16',
-            status:'未通过'
-        }
-    ]
+
     },
 
     /**

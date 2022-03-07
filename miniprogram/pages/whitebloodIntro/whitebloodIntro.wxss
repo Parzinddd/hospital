@@ -1,0 +1,9 @@
+image{
+    width: 100vw;
+    height: 141vw;
+}
+
+button{
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+}

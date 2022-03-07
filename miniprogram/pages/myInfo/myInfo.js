@@ -8,17 +8,19 @@ Page({
         userInfo:{},
         hasUserInfo: false,
         canIUseGetUserProfile: false,
-        userPhoneNumber:'18521303530',
         myData:'../../resource/img/my.jpg',
-        hsHistory:'../../resource/img/hsHistory.jpg',
+        healthCheckHistory:'../../resource/img/hsHistory.jpg',
         joinHistory:'../../resource/img/joinHistory.jpg',
-        userInfo:{}
+        userInfo:{},
+        language:0
     },
 
     getUserProfile(e) {
         wx.getUserProfile({
           desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
           success: (res) => {
+            const app = getApp()
+            app.globalData.ifLogin = 1
             this.setData({
               userInfo: res.userInfo,
               hasUserInfo: true
@@ -31,8 +33,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
-    },
+      const app = getApp()
+      const language = app.globalData.language
+      this.setData({
+          language: language,
+      })
+  },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -51,9 +57,9 @@ Page({
         })
     },
 
-    goToHsHistory:function(){
+    goTohealthCheckPaper:function(){
         wx.navigateTo({
-          url: '../hsHistory/hsHistory',
+          url: '../healthCheckPaper/healthCheckPaper',
         })
     },
     

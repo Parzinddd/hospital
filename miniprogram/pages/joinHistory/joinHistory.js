@@ -5,31 +5,60 @@ Page({
      * 页面的初始数据
      */
     data: {
-        projectList:[{
-            id:0,
-            name:'白细胞采集',
-            date:'2022-2-18',
-            status:'审核中'
-        },
-        {
-            id:1,
-            name:'中国男性捐精',
-            date:'2022-2-17',
-            status:'已通过'
-        },
-        {
-            id:2,
-            name:'干细胞采集',
-            date:'2022-2-16',
-            status:'已完成'
-        }
-    ]
+        projectList: [],
+        length: 0
+    },
+
+    goToCoUpload:function(e){
+        const arrayIndex = this.data.length - e.currentTarget.dataset.id -1 
+        const reserveId = this.data.projectList[arrayIndex].reserveId
+        
+        wx.navigateTo({
+          url: '/pages/coUpload/coUpload',
+          success: function(res){
+                  res.eventChannel.emit('acceptData',{
+                  reserveId: reserveId
+              })
+          }
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        const app = getApp()
+        const openid = app.globalData.openid
+        const db = wx.cloud.database();
+        const collections = db.collection('collectionRecords');
+
+        collections.where({
+            _openid: openid
+        }).get({
+            success: res => {
+            //    console.log(res)
+               const length = res.data.length
+            //    console.log(length)
+               const projectList_copy = []
+               for(var i = length-1 ; i >= 0 ; i--){
+                   projectList_copy.push({
+                       id: i,
+                       name: res.data[i].collect_name,
+                       date : '2022/' + res.data[i].reserveDate + '/'+res.data[i].reserveTime,
+                       status: res.data[i].status,
+                       healthCheck: res.data[i].healthCheck,
+                       reserveId: res.data[i]._id,
+                       zfbStatus: res.data[i].zfbStatus,
+                   })
+               }
+               this.setData({
+                   projectList: projectList_copy,
+                   length: length
+               })
+            //    console.log(this.data.projectList)
+              },
+        })
+
 
     },
 

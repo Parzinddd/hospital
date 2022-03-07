@@ -1,0 +1,2 @@
+<block wx:if="{{url == ''}}"><view class="error">尚未出结果，感谢您的耐心等候</view></block>
+<block wx:else><image src="{{url}}"></image></block>

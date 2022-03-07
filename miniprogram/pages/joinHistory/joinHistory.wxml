@@ -1,8 +1,18 @@
 <view class="join_block" wx:for="{{projectList}}" wx:key="id">
-    <view class="projectName">{{item.name}}</view>
-    <view class="line"></view>
+    <view class="join_header">
+        <view class="projectName">{{item.name}}</view>
+        <view class="join_header_right">
+            <block wx:if="{{item.healthCheck == 0}}" >
+                <view bindtap="goToCoUpload"  data-id="{{item.id}}" class="goToCoUpload">上传核酸报告</view>
+            </block>
+            <block  wx:else>
+                <view class="alreadyUpload">核酸报告已上传</view>
+            </block>
+        </view>
+    </view>
     <view class="projectInfo">
-        <veiw class="projectDate">{{item.date}}</veiw>
-        <veiw class="projectStatus">{{item.status}}</veiw>
+        <view class="line"></view>
+        <view class="projectDate">预约时间:{{item.date}}</view>
+        <view class="projectStatus">{{item.status}}</view>
     </view>
 </view>

@@ -1,21 +1,28 @@
 {
   "pages": [
+    "pages/languageSelect/languageSelect",
+    "pages/myInfo/myInfo",
     "pages/index/index",
     "pages/baseInfo/baseInfo",
-    "pages/hsHistory/hsHistory",
+    "pages/healthCheckPaper/healthCheckPaper",
     "pages/joinHistory/joinHistory",
     "pages/login/login",
     "pages/news/news",
     "pages/qa/qa",
-    "pages/myInfo/myInfo",
     "pages/coUpload/coUpload",
     "pages/healthCheck/healthCheck",
     "pages/cooperation/cooperation",
     "pages/able/able",
     "pages/blackboard/blackboard",
     "pages/whiteBlood/whiteBlood",
-    "pages/getOpenId/getOpenId"
-  ],
+    "pages/getOpenId/getOpenId",
+    "pages/whitebloodIntro/whitebloodIntro",
+    "pages/paper/paper",
+    "pages/news1/news1",
+    "pages/news2/news2",
+    "pages/news3/news3",
+    "pages/news4/news4"
+    ],
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#808080",
@@ -35,12 +42,6 @@
     "selectedIconPath": "resource/img/QA1.png"
     },
     {
-    "pagePath": "pages/news/news",
-    "text": "通知",
-    "iconPath": "resource/img/message.png",
-    "selectedIconPath": "resource/img/message1.png"
-    },
-    {
     "pagePath": "pages/myInfo/myInfo",
     "text": "我的",
     "iconPath": "resource/img/person.png",
@@ -52,7 +53,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "白细胞",
+    "navigationBarTitleText": "广瀚堂",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

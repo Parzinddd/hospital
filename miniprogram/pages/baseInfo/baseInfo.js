@@ -4,7 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        array: ['身份证', '港澳居民往来大陆通行证', '台湾居民来往大陆通行证','中国护照','境外护照','其他'],
+        array: ['身份证', '港澳居民往来大陆通行证', '台湾居民来往大陆通行证','境外护照(Passport)'],
         objectArray: [
           {
             id: 0,
@@ -20,16 +20,8 @@ Page({
           },
           {
             id: 3,
-            name: '中国护照'
+            name: '境外护照(Passport)'
           },
-          {
-            id: 4,
-            name: '境外护照'
-          },
-          {
-            id: 5,
-            name: '其他'
-          }
         ],
         index: 0,
         date:'2021-01-01',
@@ -52,6 +44,9 @@ Page({
         phonenumber:'',
         height:'',
         weight:'',
+        zfb:'',
+        images: [],
+        path:''
     },
     
     bindDateChange: function(e) {
@@ -83,6 +78,7 @@ Page({
         let phonenumber = e.detail.value.phonenumber;
         let height = e.detail.value.height;
         let weight = e.detail.value.weight;
+        let zfb = e.detail.value.zfb;
 
         if (idnumber=='') {
           wx.showToast({
@@ -113,6 +109,12 @@ Page({
             title: '请输入体重',
             icon:'error',
           })
+        }else if (zfb=='') {
+          wx.showToast({
+            title: '请输入支付宝账号',
+            icon:'error',
+          })
+          return false
         }else{
           const db = wx.cloud.database();
         const collections = db.collection('user_test');
@@ -122,9 +124,10 @@ Page({
           _openid: openid
         }).get({
           success: res => {
+            
             if(res.data.length){
               console.log('该用户存在记录')
-              console.log(res.data[0]._id)
+              
               collections.doc(res.data[0]._id).update({
                 data:{
                   data:{
@@ -137,16 +140,19 @@ Page({
                     sex: e.detail.value.sex,
                     sexIndex: e.detail.value.sexIndex,
                     username: e.detail.value.username,
-                    weight: e.detail.value.weight
-                  }
+                    weight: e.detail.value.weight,
+                    zfb: e.detail.value.zfb,
+                  },
+                  path: this.data.path
                 }
               })
             }
             else{
-              console.log(e.detail.value)
+              
               collections.add({
                 data:{
-                  data:e.detail.value
+                  data:e.detail.value,
+                  path: this.data.path
                 }
               })
             }
@@ -175,6 +181,73 @@ Page({
 
         
       },
+
+      uploadPath(){
+        if(this.data.images.length!=0){
+          wx.showLoading({
+          title: '图片上传中',
+          mask: true,
+          })
+          //path != ''
+          if(this.data.path!=''){
+            wx.cloud.deleteFile({
+              fileList:[this.data.path],
+              success: res => {
+                console.log('删除照片成功')
+              },
+              fail: err => {
+                console.log('删除失败 ', err)
+              }
+            })
+          }
+          wx.cloud.uploadFile({
+              cloudPath:"passport/" + new Date().getTime() +"-"+ Math.floor(Math.random() * 1000),
+              filePath:this.data.images[0],
+              success: res=>{
+                  console.log('护照图片上传成功  ',res.fileID)
+                  wx.cloud.getTempFileURL({
+                    fileList:[res.fileID],
+                    success: res => {
+                      this.setData({
+                        path: res.fileList[0].tempFileURL
+                    })
+                    console.log('data.path  ',this.data.path)
+                    }
+                  })
+                  
+              },
+              fail: res=>{
+                  wx.showToast({ title: '系统错误' })
+                  console.log('上传失败',res)
+              },
+              complete: res=>{
+                  wx.hideLoading({
+                  success: (res) => {},
+                  })
+              }
+          })
+      }else{
+          wx.showToast({ 
+              title: '请选择图片',
+              icon:'error'
+          })
+      }
+
+      },
+
+      uploadPassport:function(e){
+        wx.chooseImage({
+          sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
+          sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
+          success: res => {
+              const image = this.data.images.concat(res.tempFilePaths)
+              this.setData({
+              images: image
+              })
+              this.uploadPath()
+          }
+      })
+      },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -188,6 +261,7 @@ Page({
         _openid: openid
       }).get({
         success: res => {
+          console.log(res)
           if(res.data.length){
             this.setData({
               date:res.data[0].data.birthday,
@@ -199,7 +273,9 @@ Page({
               username:res.data[0].data.username,
               weight:res.data[0].data.weight,
               index: res.data[0].data.index,
-              sexIndex: res.data[0].data.sexIndex
+              sexIndex: res.data[0].data.sexIndex,
+              zfb: res.data[0].data.zfb,
+              path: res.data[0].path,
             })
           }
 
