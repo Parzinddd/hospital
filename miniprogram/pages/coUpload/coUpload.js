@@ -5,20 +5,21 @@ Page({
      * 页面的初始数据
      */
     data: {
-        url: '',
-        images: [],
+        images: ['http://tmp/D5Sq7pvFFhQyf89ac4157e65ab0fc6802abbd45c8a3a.JPG','http://tmp/D5Sq7pvFFhQyf89ac4157e65ab0fc6802abbd45c8a3a.JPG'],
         reserveId: ''
     },
 
 
     chooseImage(){
         wx.chooseImage({
+            count: 9,
             sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
             sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
             success: res => {
-                const image = this.data.images.concat(res.tempFilePaths)
+                const images = this.data.images.concat(res.tempFilePaths)
+                const images1 = images.length <= 9 ? images : images.slice(0, 9)
                 this.setData({
-                images: image
+                images: images1
                 })
             }
         })
@@ -32,12 +33,9 @@ Page({
             })
             wx.cloud.uploadFile({
                 cloudPath:"hsImg/" + new Date().getTime() +"-"+ Math.floor(Math.random() * 1000),
-                filePath:this.data.images[0],
+                filePath:this.data.images,
                 success: res=>{
                     console.log('上传成功',res)
-                    this.setData({
-                        url: this.data.images[0],
-                    })
                 },
                 fail: res=>{
                     wx.showToast({ title: '系统错误' })
@@ -75,10 +73,16 @@ Page({
         }
     },
     
-    removeImage(){
+    removeImage(e){
+        var that = this;
+        var images = that.data.images;
+         // 获取要删除的第几张图片的下标
+        const idx = e.currentTarget.dataset.idx
+          // splice  第一个参数是下表值  第二个参数是删除的数量
+        images.splice(idx,1)
         this.setData({
-            images: []
-          })
+            images: images
+       })
     },
 
     onLoad (option){

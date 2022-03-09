@@ -4,7 +4,7 @@ page{
   }
   
   .up{
-    position: relative;
+    position: absolute;
     left: 0rpx;
     top: 183rpx;
     background-color: #00CC00;
@@ -19,49 +19,52 @@ page{
   }
 
   .block_1{
+    border: 2rpx solid black;
     background-color: white;
+    width: 640rpx;
+    height: 626rpx;
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
   }
-  .image_container{
-    width: 656rpx; 
-    height: 716rpx;
-    border-style: solid;
+  .container{
+    margin-left: 6rpx;
+    position: relative;
+    width: 206rpx;
+    height: 206rpx;
+    float: left;
   }
+
   .image_show{
-    width: 656rpx;
-    height: 716rpx;
+    border: 6rpx solid white;
+    width: 200rpx;
+    height: 200rpx;
   }
-  .remove_button{
-    width: 100rpx;
-    height: 100rpx;
-    background-color: white;
-    border-radius: 100%;
-    position: absolute;
-    top:-50rpx;
-    right:-50rpx;
-  }
-  
+ 
+ .remove_button{
+   background-color: white;
+ }   
   .remove_button image{
+    border-radius: 20%;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 1rpx;
+    right: 5rpx;
     width: 30rpx;
     height: 30rpx;
-    position: relative;
-    top: 50rpx;
-    left: 15rpx;
   }
     
   .uploadImgBtn{
-    width: 150rpx;
-    height: 150rpx;
+    width: 200rpx;
+    height: 200rpx;
     text-align: center;
     line-height: 140rpx;
     border: 6rpx solid #f0f0f0;
     float: left;
-    margin-left: 6vw;
-    margin-top: 4vw;
   }
   
   .uploadImgBtn text{
     font-size: 25rpx;
     color: #999;
   }
+
