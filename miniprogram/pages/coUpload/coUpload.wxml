@@ -14,4 +14,4 @@
         <text style="height: 190rpx; align-items: center; justify-content: center;  width: 190rpx;">+添加照片</text>
     </view>
 </view>
-<button class="up" bindtap="uploadImage" style="position: absolute; left: 202rpx; top: 966rpx">上传图片</button>
+<button class="up" bindtap="uploadImages" style="position: absolute; left: 202rpx; top: 966rpx">上传图片</button>

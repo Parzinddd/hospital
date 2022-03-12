@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        images: ['http://tmp/D5Sq7pvFFhQyf89ac4157e65ab0fc6802abbd45c8a3a.JPG','http://tmp/D5Sq7pvFFhQyf89ac4157e65ab0fc6802abbd45c8a3a.JPG'],
+        images: [],
         reserveId: ''
     },
 
@@ -25,54 +25,59 @@ Page({
         })
     },
  
-    uploadImage(){
+    uploadImage(Imagepath){ 
+        wx.cloud.uploadFile({
+            cloudPath:"hsImg/" + new Date().getTime() +"-"+ Math.floor(Math.random() * 1000),
+            filePath:Imagepath,
+            success: res=>{
+                console.log('上传成功',res)
+            },
+            fail: res=>{
+                wx.showToast({ title: '系统错误' })
+                console.log('上传失败',res)
+            },
+        })
+    },
+
+    uploadImages(){
         if(this.data.images.length!=0){
             wx.showLoading({
             title: '图片上传中',
             mask: true,
             })
-            wx.cloud.uploadFile({
-                cloudPath:"hsImg/" + new Date().getTime() +"-"+ Math.floor(Math.random() * 1000),
-                filePath:this.data.images,
-                success: res=>{
-                    console.log('上传成功',res)
-                },
-                fail: res=>{
-                    wx.showToast({ title: '系统错误' })
-                    console.log('上传失败',res)
-                },
-                complete: res=>{
-                    wx.hideLoading({
-                    success: (res) => {},
-                    })
-                    const db = wx.cloud.database();
-                    const collections = db.collection('collectionRecords');
-                    collections.doc(this.data.reserveId).update({
-                        data:{
-                            healthCheck: 1
-                        }
-                    })
-                    wx.showToast({ 
-                        title: '上传成功',
-                        icon: 'success',
-                        duration: 2000,
-                        success:()=>{
-                        setTimeout(()=> {
-                            wx.switchTab({
-                              url: '/pages/myInfo/myInfo',
-                            })
-                        },2000)
-                    } })
+            for(var i=0;i<this.data.images.length;i++){
+                this.uploadImage(this.data.images[i])
+            }
+            wx.hideLoading({
+                success: (res) => {},
+            })
+            const db = wx.cloud.database();
+            const collections = db.collection('collectionRecords');
+            collections.doc(this.data.reserveId).update({
+                data:{
+                    healthCheck: 1
                 }
             })
+            wx.showToast({ 
+                title: '上传成功',
+                icon: 'success',
+                duration: 2000,
+                success:()=>{
+                setTimeout(()=> {
+                    wx.switchTab({
+                        url: '/pages/myInfo/myInfo',
+                    })
+                },2000)
+            } })
+
         }else{
             wx.showToast({ 
                 title: '请选择图片',
                 icon:'error'
             })
         }
+
     },
-    
     removeImage(e){
         var that = this;
         var images = that.data.images;
